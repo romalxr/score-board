@@ -28,11 +28,11 @@
         </div>
         <div>
             <form method="post" action="#">
-                <label>Player one</label>
-                <input placeholder="Name" type="text" required title="Enter a name">
-                <label>Player two</label>
-                <input placeholder="Name" type="text" required title="Enter a name">
-                <input type="submit" value="Start">
+                <label for="player1">Player one:</label>
+                <input placeholder="Name" type="text" id="player1" name="player1" required title="Enter a name"><br>
+                <label for="player2">Player two:</label>
+                <input placeholder="Name" type="text" id="player2" name="player2" required title="Enter a name"><br>
+                <input type="submit" value="Submit">
             </form>
         </div>
     </div>

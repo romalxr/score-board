@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 public class Match {
     private Long id;
 
-    private Player Player1;
+    private Player player1;
 
-    private org.example.scoreboard.entity.Player Player2;
+    private org.example.scoreboard.entity.Player player2;
 
-    private org.example.scoreboard.entity.Player Winner;
+    private org.example.scoreboard.entity.Player winner;
 }
