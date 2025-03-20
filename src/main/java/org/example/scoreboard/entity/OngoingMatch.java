@@ -106,6 +106,11 @@ public class OngoingMatch {
         return sets[0] >= 2 || sets[1] >= 2;
     }
 
+    public Player getWinner() {
+        if (!isFinished()) return null;
+        return sets[0] >= 2 ? player1 : player2;
+    }
+
     public Integer winnerNumber() {
         if (!isFinished()) return null;
         return sets[0] >= 2 ? 1 : 2;

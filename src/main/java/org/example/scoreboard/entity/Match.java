@@ -1,18 +1,31 @@
 package org.example.scoreboard.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "matches")
 public class Match {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne()
+    @JoinColumn(name = "Player1", nullable = false)
     private Player player1;
 
-    private org.example.scoreboard.entity.Player player2;
+    @ManyToOne
+    @JoinColumn(name = "Player2" , nullable = false)
+    private Player player2;
 
-    private org.example.scoreboard.entity.Player winner;
+    @ManyToOne
+    @JoinColumn(name = "Winner" , nullable = false)
+    private Player winner;
 }
