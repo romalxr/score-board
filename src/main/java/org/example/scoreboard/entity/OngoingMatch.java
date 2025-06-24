@@ -94,7 +94,7 @@ public class OngoingMatch {
         tieBreakPoints = new int[2];
     }
 
-    private boolean tieBreak() {
+    public boolean tieBreak() {
         return games[0] == 6 && games[1] == 6;
     }
 
