@@ -15,7 +15,7 @@
         <div>
             <nav>
                 <a href="/">Home</a>
-                <a href="#">Matches</a>
+                <a href="/matches">Matches</a>
             </nav>
         </div>
     </section>

@@ -9,7 +9,10 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Properties;
+
+import org.h2.tools.Server;
 
 public class HibernateUtil {
     @Getter
@@ -31,11 +34,22 @@ public class HibernateUtil {
                     .applySettings(configuration.getProperties())
                     .build();
 
+            createWebServer();
             return configuration.buildSessionFactory(serviceRegistry);
         } catch (IOException e) {
             throw new RuntimeException("Ошибка загрузки hibernate.properties", e);
         } catch (Exception ex) {
             throw new ExceptionInInitializerError("Ошибка инициализации Hibernate: " + ex);
+        }
+    }
+
+    private static void createWebServer() {
+        try {
+            Server webServer = Server.createWebServer("-webPort", "8082", "-webAllowOthers").start();
+            System.out.println("H2 Console started: http://localhost:8082");
+        } catch (SQLException e) {
+            System.out.println("error: H2 Console not started");
+            System.out.println(e.getMessage());
         }
     }
 }

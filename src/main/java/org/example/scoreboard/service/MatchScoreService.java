@@ -7,18 +7,20 @@ import org.example.scoreboard.exception.NotFoundException;
 import org.example.scoreboard.repository.OngoingMatchInMemoryRepository;
 import org.example.scoreboard.repository.PlayerRepository;
 
+import java.util.Optional;
+
 public class MatchScoreService {
-    private final MatchSevice matchSevice = new MatchSevice();
+    private final MatchService matchService = new MatchService();
     private final OngoingMatchInMemoryRepository ongoingMatches = new OngoingMatchInMemoryRepository();
     private final PlayerRepository playerRepository = new PlayerRepository();
 
     public String createNewMatch(String player1Name, String player2Name) {
-
-        Player player1 = playerRepository.findByName(player1Name).orElse(
-                playerRepository.save(new Player(null, player1Name))
+        
+        Player player1 = playerRepository.findByName(player1Name).orElseGet(
+                () -> playerRepository.save(new Player(null, player1Name))
         );
-        Player player2 = playerRepository.findByName(player2Name).orElse(
-                playerRepository.save(new Player(null, player2Name))
+        Player player2 = playerRepository.findByName(player2Name).orElseGet(
+                () -> playerRepository.save(new Player(null, player2Name))
         );
 
         OngoingMatch newMatch = new OngoingMatch();
@@ -42,7 +44,7 @@ public class MatchScoreService {
         if (match.isFinished()) {
             Match finishedMatch = new Match(null, match.getPlayer1(), match.getPlayer2(), match.getWinner());
             System.out.println("#2144 it's here");
-            matchSevice.save(finishedMatch);
+            matchService.save(finishedMatch);
             System.out.println("#2145 it's here");
         }
     }

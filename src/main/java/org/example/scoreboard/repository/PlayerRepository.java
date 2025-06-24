@@ -23,8 +23,7 @@ public class PlayerRepository implements CrudRepository<Player, Long> {
             Optional<Player> player = session.createQuery("FROM Player WHERE name = :name", Player.class)
                     .setParameter("name", name)
                     .uniqueResultOptional();
-            int a = 1;
-            System.out.println("find player work good ");
+            System.out.println("players find works good");
             return player;
         }
     }
