@@ -24,7 +24,7 @@
 </header>
 <main>
     <div>
-        <h2>Current match</h1>
+        <h2>Current match</h2>
         <div>
             <img src="../images/scorekeeper.png">
         </div>

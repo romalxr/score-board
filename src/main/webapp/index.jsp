@@ -17,9 +17,16 @@
         </div>
     </section>
 </header>
-<h1>Welcome to Tennis Scoreboard</h4>
-<h3>Manage your tennis matches, record results, and track rankings</h1>
-<p><a href='/new-match'>Start a new match</a></p>
-<p><a href='/matches'>View match results</a></p>
+<main>
+    <div>
+        <h2>Welcome to Tennis Scoreboard</h2>
+        <h3>Manage your tennis matches, record results, and track rankings</h3>
+        <div>
+            <img src="../images/welcome_image.png">
+        </div>
+        <p><a href='/new-match'>Start a new match</a></p>
+        <p><a href='/matches'>View match results</a></p>
+    </div>
+</main>
 </body>
 </html>
