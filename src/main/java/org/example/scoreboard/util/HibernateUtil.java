@@ -21,7 +21,6 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             Configuration configuration = new Configuration();
-            System.out.println("buildSessionFactory начало");
 
             Properties properties = new Properties();
             properties.load(HibernateUtil.class.getClassLoader().getResourceAsStream("hibernate.properties"));
@@ -46,7 +45,7 @@ public class HibernateUtil {
     private static void createWebServer() {
         try {
             Server webServer = Server.createWebServer("-webPort", "8082", "-webAllowOthers").start();
-            System.out.println("H2 Console started: http://localhost:8082");
+            System.out.println("H2 Console started: -:8082");
         } catch (SQLException e) {
             System.out.println("error: H2 Console not started");
             System.out.println(e.getMessage());

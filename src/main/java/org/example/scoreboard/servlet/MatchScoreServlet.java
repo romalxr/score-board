@@ -19,10 +19,8 @@ public class MatchScoreServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        System.out.println("#3123 it's here");
 
         String id = req.getParameter("uuid");
-        System.out.println("uuid " + id);
 
         OngoingMatch currentMatch = matchScoreService.getMatch(id);
         req.setAttribute("currentMatch", currentMatch);
@@ -32,22 +30,18 @@ public class MatchScoreServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        System.out.println("#7143 it's here");
 
         String id = req.getParameter("uuid");
         String winnerInfo = req.getParameter("winnerInfo");
         int playerNumber = winnerInfo.equals("player-1-win") ? 1 : 2;
-        System.out.println("winnerInfo " + winnerInfo);
 
         try {
             matchScoreService.updateScore(id, playerNumber);
         } catch (Exception e) {
-            System.out.println("#7145 it's here");
             System.out.println(e.getMessage());
             throw new NotFoundException(e.getMessage());
         }
 
-        System.out.println("#7144 it's here");
-        resp.sendRedirect("match-score?uuid=" + id);
+        resp.sendRedirect("/score-board/match-score?uuid=" + id);
     }
 }

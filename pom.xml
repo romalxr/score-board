@@ -16,6 +16,7 @@
   </properties>
 
   <build>
+    <finalName>score-board</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -67,7 +68,7 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>2.2.224</version> <!-- Проверьте актуальную версию на момент использования -->
+      <version>2.2.224</version>
     </dependency>
     <dependency>
       <groupId>jakarta.persistence</groupId>

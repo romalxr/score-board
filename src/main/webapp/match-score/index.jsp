@@ -16,8 +16,8 @@
         </div>
         <div>
             <nav>
-                <a href="/">Home</a>
-                <a href="/matches">Matches</a>
+                <a href="/score-board/">Home</a>
+                <a href="/score-board/matches">Matches</a>
             </nav>
         </div>
     </section>
@@ -26,7 +26,7 @@
     <div>
         <h2>Current match</h2>
         <div>
-            <img src="../images/scorekeeper.png">
+            <img src="../score-board/images/scorekeeper.png">
         </div>
         <table>
             <tr>

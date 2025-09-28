@@ -19,7 +19,8 @@ public class Encoding extends HttpFilter {
         res.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
 
-        System.out.println("reqURI " + req.getRequestURI());
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
         super.doFilter(req, res, chain);
     }
 }

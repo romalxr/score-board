@@ -17,21 +17,16 @@ public class NewMatchServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        System.out.println("#1232 it's here");
-
         RequestDispatcher view = req.getRequestDispatcher("new-match/index.jsp");
         view.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        System.out.println("#4524 it's here");
-
         String player1 = req.getParameter("player1");
         String player2 = req.getParameter("player2");
 
-        System.out.println("player1, player2 " + player1 + " " + player2);
         String id = matchScoreService.createNewMatch(player1, player2);
-        resp.sendRedirect("../match-score?uuid=" + id);
+        resp.sendRedirect("../score-board/match-score?uuid=" + id);
     }
 }

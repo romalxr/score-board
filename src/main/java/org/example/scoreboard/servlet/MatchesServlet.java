@@ -19,7 +19,6 @@ public class MatchesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        System.out.println("#6623 it's here");
 
         String page = req.getParameter("page");
         int pageNumber;
@@ -31,7 +30,6 @@ public class MatchesServlet extends HttpServlet {
         if (pageNumber < 1) pageNumber = 1;
 
         String filter = req.getParameter("filter_by_player_name");
-        System.out.println("filter " + filter);
 
         List<Match> matchesPortion;
         if (filter != null && !filter.isEmpty()) {
@@ -52,12 +50,10 @@ public class MatchesServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        System.out.println("#2224 it's here");
 
         String playerName = req.getParameter("playerName");
         String pageNumber = req.getParameter("pageNumber");
-        System.out.println("pageNumber" + pageNumber);
 
-        resp.sendRedirect("matches?page=" + pageNumber + "&filter_by_player_name=" + playerName);
+        resp.sendRedirect("/score-board/matches?page=" + pageNumber + "&filter_by_player_name=" + playerName);
     }
 }

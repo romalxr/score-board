@@ -14,8 +14,8 @@
         </div>
         <div>
             <nav>
-                <a href="/">Home</a>
-                <a href="/matches">Matches</a>
+                <a href="/score-board/">Home</a>
+                <a href="/score-board/matches">Matches</a>
             </nav>
         </div>
     </section>
@@ -24,7 +24,7 @@
     <div>
         <h1>Start new match</h1>
         <div>
-            <img src="../images/racket.png">
+            <img src="../score-board/images/racket.png">
         </div>
         <div>
             <form method="post" action="#">

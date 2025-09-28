@@ -23,7 +23,6 @@ public class PlayerRepository implements CrudRepository<Player, Long> {
             Optional<Player> player = session.createQuery("FROM Player WHERE name = :name", Player.class)
                     .setParameter("name", name)
                     .uniqueResultOptional();
-            System.out.println("players find works good");
             return player;
         }
     }
@@ -31,13 +30,9 @@ public class PlayerRepository implements CrudRepository<Player, Long> {
     @Override
     public Player save(Player entity) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            System.out.println("save started");
             Transaction transaction = session.beginTransaction();
-            System.out.println("transaction started");
             session.persist(entity);
-            System.out.println("entity persisted");
             transaction.commit();
-            System.out.println("Удачно сохранилось Player");
             return entity;
         } catch (Exception e) {
             System.out.println("Ошибка при сохранении Player");

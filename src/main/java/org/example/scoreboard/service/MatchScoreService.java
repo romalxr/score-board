@@ -7,8 +7,6 @@ import org.example.scoreboard.exception.NotFoundException;
 import org.example.scoreboard.repository.OngoingMatchInMemoryRepository;
 import org.example.scoreboard.repository.PlayerRepository;
 
-import java.util.Optional;
-
 public class MatchScoreService {
     private final MatchService matchService = new MatchService();
     private final OngoingMatchInMemoryRepository ongoingMatches = new OngoingMatchInMemoryRepository();
@@ -43,9 +41,7 @@ public class MatchScoreService {
         match.addScorePoints(playerNumber);
         if (match.isFinished()) {
             Match finishedMatch = new Match(null, match.getPlayer1(), match.getPlayer2(), match.getWinner());
-            System.out.println("#2144 it's here");
             matchService.save(finishedMatch);
-            System.out.println("#2145 it's here");
         }
     }
 

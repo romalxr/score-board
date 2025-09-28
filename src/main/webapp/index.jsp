@@ -11,8 +11,8 @@
         </div>
         <div>
             <nav>
-                <a href="/">Home</a>
-                <a href="/matches">Matches</a>
+                <a href="/score-board/">Home</a>
+                <a href="/score-board/matches">Matches</a>
             </nav>
         </div>
     </section>
@@ -22,10 +22,10 @@
         <h2>Welcome to Tennis Scoreboard</h2>
         <h3>Manage your tennis matches, record results, and track rankings</h3>
         <div>
-            <img src="../images/welcome_image.png">
+            <img src="../score-board/images/welcome_image.png">
         </div>
-        <p><a href='/new-match'>Start a new match</a></p>
-        <p><a href='/matches'>View match results</a></p>
+        <p><a href='/score-board/new-match'>Start a new match</a></p>
+        <p><a href='/score-board/matches'>View match results</a></p>
     </div>
 </main>
 </body>
